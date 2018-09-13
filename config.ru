@@ -5,3 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+use UsersController
+use RoutesController
+use RouteController.rbsController
+use UserController.rbsController

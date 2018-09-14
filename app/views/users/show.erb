@@ -1,5 +1,7 @@
 <h1>Welcome, <%= @user.username %></h1>
+
 <h3> Here is a list of all your routes: </h3>
+<button onclick="window.location.href='/routes/new'">Create a new route!</button><br><br>
 
 <ul>
   <% @user.routes.each do |r| %>

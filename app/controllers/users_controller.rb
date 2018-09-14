@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     erb :"/users/signup"
   end
 
-  post "/singup" do
+  post "/signup" do
     @user = User.create(username: params[:username], password: params[:password])
     if @user.valid?
       session[:user_id] = @user.id

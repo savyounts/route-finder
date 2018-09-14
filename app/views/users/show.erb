@@ -10,10 +10,14 @@
   <h3> Check out <%= @user.username %>'s current projects: </h3>
 <% end %>
 
-<button onclick="window.location.href='/routes/new'">Create a new route!</button><br><br>
-
 <ul>
   <% @user.routes.each do |r| %>
-    <li><a href="/routes/<%= r.id %>"> <%= r.name %></a> </li>
+    <li><a href="/routes/<%= r.id %>"> <%= r.name %></a><br>
+      Grade: <%= r.grade %><br>
+      Status: <%= my_routes_status(r, @user).status %></li><br>
   <% end %>
 </ul>
+
+<% if current_user == @user %>
+<button onclick="window.location.href='/routes/new'">Create a new route!</button><br><br>
+<% end %>

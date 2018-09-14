@@ -2,6 +2,7 @@ class RoutesController < ApplicationController
 
   # GET: /routes
   get "/routes" do
+    @routes = Route.all
     erb :"/routes/index"
   end
 

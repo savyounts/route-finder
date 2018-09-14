@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       redirect "/users/#{@user.id}"
     else
       redirect "/login"
+    end
   end
 
   get "/signup" do
@@ -20,9 +21,9 @@ class UsersController < ApplicationController
   end
 
   post "/singup" do
-    @user = User.create(params)
+    @user = User.create(username: params[:username], password: params[:password])
     if @user.valid?
-      session[user_id:] = @user.id
+      session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
     else
       redirect "/singup"

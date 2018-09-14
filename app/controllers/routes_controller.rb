@@ -54,10 +54,14 @@ class RoutesController < ApplicationController
   # GET: /routes/5/edit
   get "/routes/:id/edit" do
     @route = Route.find(params[:id])
-    if current_user
-      erb :"/routes/edit"
+    if logged_in?
+      if current_user
+        erb :"/routes/edit"
+      else
+        redirect "/routes/#{current_user.id}"
+      end
     else
-      redirect "/routes/#{@route.id}/edit"
+      redirect "/routes/login"
     end
   end
 

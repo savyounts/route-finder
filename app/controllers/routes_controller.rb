@@ -21,7 +21,6 @@ class RoutesController < ApplicationController
 
   # POST: /routes
   post "/routes" do
-    binding.pry
     @rs = RouteStatus.create(params[:route_status])
     @route = Route.create(params[:route])
     @route.route_statuses << @rs
@@ -48,6 +47,7 @@ class RoutesController < ApplicationController
     end
   end
 
+  #POST -- adds new route status and links route to user
   post '/routes/:id' do
     @route = Route.find(params[:id])
     rs = RouteStatus.create(params[:route_status])

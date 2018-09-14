@@ -1,6 +1,6 @@
 <h1>All My Routes</h1>
 
-<ol>
+<ul>
   <% @routes.each do |r| %>
   <li>
     <a href="/user/<%= r.id %>"><h3><%= r.name %></h3></a>
@@ -13,4 +13,4 @@
   <% end %>
 
   </li>
-</ol>
+</ul>

@@ -59,7 +59,7 @@ class RoutesController < ApplicationController
     @route = Route.find(params[:id])
     if logged_in?
       if current_user
-        @current_user = current_user
+        @rs = my_routes_status(@route, current_user)
         erb :"/routes/edit"
       else
         redirect "/routes/#{current_user.id}"
@@ -71,7 +71,13 @@ class RoutesController < ApplicationController
 
   # PATCH: /routes/5
   patch "/routes/:id" do
-    redirect "/routes/:id"
+    @route = Route.find(params[:id])
+    @rs = my_routes_status(@route, current_user)
+    @rs.status = params[:route_status][:status]
+    @rs.climb_style = params[:route_status][:climb_style]
+    @rs.current_issue = params[:route_status][:current_issue]
+    @rs.save
+    redirect "/routes/#{@route.id}"
   end
 
   # DELETE: /routes/5/delete

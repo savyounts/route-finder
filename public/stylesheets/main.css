@@ -13,8 +13,12 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
+    background: #131313; /* Old browsers */
+background: -moz-linear-gradient(top, #131313 0%, #1c1c1c 20%, #595959 86%, #4c4c4c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #131313 0%,#1c1c1c 20%,#595959 86%,#4c4c4c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #131313 0%,#1c1c1c 20%,#595959 86%,#4c4c4c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#4c4c4c',GradientType=0 ); /* IE6-9 */
+    color: #000;
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -28,6 +32,18 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+  }
+
+  .route_details {
+    color: #4c4c4c;
+  }
+
+  .route_details a {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    padding-right: 10px;
+
   }
 
   h1 {
@@ -49,6 +65,21 @@
 
   p {
     margin-bottom: 18px;
+  }
+
+  nav {
+    margin: 0, auto;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
   }
 
   .main {

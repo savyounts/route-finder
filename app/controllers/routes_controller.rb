@@ -1,5 +1,4 @@
 class RoutesController < ApplicationController
-
   # GET: /routes
   get "/routes" do
     if logged_in?
@@ -28,6 +27,7 @@ class RoutesController < ApplicationController
       current_user.route_statuses << @rs
       redirect "/routes/#{@route.id}"
     else
+      flash[:exist_message] = "This route already exists. Find this route on the Routes page and add it to your projects."
       redirect "/routes/new"
     end
   end

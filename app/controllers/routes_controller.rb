@@ -2,12 +2,12 @@ class RoutesController < ApplicationController
 
   # GET: /routes
   get "/routes" do
-    erb :"/routes/index.html"
+    erb :"/routes/index"
   end
 
   # GET: /routes/new
   get "/routes/new" do
-    erb :"/routes/new.html"
+    erb :"/routes/new"
   end
 
   # POST: /routes
@@ -17,12 +17,12 @@ class RoutesController < ApplicationController
 
   # GET: /routes/5
   get "/routes/:id" do
-    erb :"/routes/show.html"
+    erb :"/routes/show"
   end
 
   # GET: /routes/5/edit
   get "/routes/:id/edit" do
-    erb :"/routes/edit.html"
+    erb :"/routes/edit"
   end
 
   # PATCH: /routes/5

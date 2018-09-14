@@ -25,6 +25,16 @@ class RoutesController < ApplicationController
     erb :"/routes/show"
   end
 
+  get '/routes/:id/add' do
+    @route = Route.find(params[:id])
+    erb :"/routes/add"
+  end
+
+  post '/routes/:id' do
+
+    redirect "/routes/:id"
+  end
+
   # GET: /routes/5/edit
   get "/routes/:id/edit" do
     erb :"/routes/edit"

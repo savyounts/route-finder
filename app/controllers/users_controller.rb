@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+
+  # before  do
+  #   redirect "/" if !logged_in
+  # end
   # GET: /users/new
   get "/login" do
     if !logged_in?

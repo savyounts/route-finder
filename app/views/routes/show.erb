@@ -4,7 +4,8 @@
 <h4>Location: <%= @route.location %></h4><br>
 <h4>Users: <% @route.users.each do |u| %></h4><br>
   <a href="/users/<%= u.id %>"><h5><%= u.username %>, </h5></a>
-<% end %>
+    <%= u.route_statuses.find {|rs| rs.route_id == @route.id}.current_issue %><br> 
+  <% end %>
 
 <br><br>
 <button onclick="window.location.href='/routes/<%= @route.id%>/edit'">Edit Your Route Status</a></button><br>

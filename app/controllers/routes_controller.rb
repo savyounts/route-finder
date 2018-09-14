@@ -21,9 +21,11 @@ class RoutesController < ApplicationController
 
   # POST: /routes
   post "/routes" do
+    binding.pry
     @rs = RouteStatus.create(params[:route_status])
-    @route = Route.create(name: params[:name], grade: params[:grade], location: params[:location])
+    @route = Route.create(params[:route])
     @route.route_statuses << @rs
+    current_user.route_statuses << @rs
     redirect "/routes/#{@route.id}"
   end
 
@@ -46,7 +48,7 @@ class RoutesController < ApplicationController
     end
   end
 
-  post '/routes/:id' do
+  patch '/routes/:id' do
 
     redirect "/routes/:id"
   end
@@ -80,4 +82,6 @@ class RoutesController < ApplicationController
       redirect "/routes/#{@route.id}"
     end
   end
+
+
 end

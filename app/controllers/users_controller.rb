@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/login" do
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username].downcase)
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
-    @user = User.create(username: params[:username], password: params[:password])
+    @user = User.create(username: params[:username].downcase, password: params[:password])
     if @user.valid?
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"

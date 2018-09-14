@@ -21,11 +21,15 @@ class RoutesController < ApplicationController
 
   # POST: /routes
   post "/routes" do
-    @rs = RouteStatus.create(params[:route_status])
-    @route = Route.create(params[:route])
-    @route.route_statuses << @rs
-    current_user.route_statuses << @rs
-    redirect "/routes/#{@route.id}"
+    if !params[:route].empty? && !Route.find_by(name: params[:route][:name])
+      @rs = RouteStatus.create(params[:route_status])
+      @route = Route.create(params[:route])
+      @route.route_statuses << @rs
+      current_user.route_statuses << @rs
+      redirect "/routes/#{@route.id}"
+    else
+      redirect "/routes/new"
+    end
   end
 
   # GET: /routes/5
@@ -41,7 +45,11 @@ class RoutesController < ApplicationController
   get '/routes/:id/add' do
     if logged_in?
       @route = Route.find(params[:id])
-      erb :"/routes/add"
+      if current_user.routes.include?(@route)
+        redirect "/routes/#{@route.id}"
+      else
+        erb :"/routes/add"
+      end
     else
       redirect "/login"
     end
@@ -62,11 +70,11 @@ class RoutesController < ApplicationController
     # binding.pry
     @route = Route.find(params[:id])
     if logged_in?
-      if current_user
+      if @route.users.include?(current_user)
         @rs = my_routes_status(@route, current_user)
         erb :"/routes/edit"
       else
-        redirect "/routes/#{current_user.id}"
+        redirect "/routes/#{@route.id}"
       end
     else
       redirect "/routes/login"

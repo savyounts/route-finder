@@ -8,11 +8,18 @@
   <% end %>
 
 <br><br>
-<button onclick="window.location.href='/routes/<%= @route.id%>/edit'">Edit Your Route Status</a></button><br>
+
+<% if @route.users.include?(current_user) %>
+  <button onclick="window.location.href='/routes/<%= @route.id%>/edit'">Edit Your Route Status</a></button><br>
+<% end %>
+
+
 <button onclick="window.location.href='/routes/<%= @route.id%>/add'">Add to Your Routes</a></button>
 
 
-<form action="/routes/<%= @route.id %>/delete" method="post">
-  <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete From Your Routes">
-</form>
+<% if @route.users.include?(current_user) %>
+  <form action="/routes/<%= @route.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete From Your Routes">
+  </form>
+<% end %>

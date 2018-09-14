@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   get "/signup" do
-    erb :"/users/new"
+    erb :"/users/signup"
   end
 
   post "/singup" do
@@ -35,20 +35,8 @@ class UsersController < ApplicationController
     erb :"/users/show"
   end
 
-  # GET: /users/5/edit
-  get "/users/:id/edit" do
-    @user = User.find(params[:id])
-    erb :"/users/edit"
-  end
-
-  # PATCH: /users/5
-  patch "/users/:id" do
-    @user = User.find(params[:id])
-    redirect "/users/:id"
-  end
-
-  # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
-    redirect "/users"
+  get "/logout" do
+    session.clear
+    redirect "/"
   end
 end

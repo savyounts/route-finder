@@ -1,6 +1,15 @@
-<h1>Welcome, <%= @user.username %></h1>
+<% if current_user == @user %>
+  <h1>Welcome, <%= current_user.username %></h1>
+<% else %>
+  <h1><%= @user.username %>'s Projects</h1>
+<% end %>
 
-<h3> Here is a list of all your routes: </h3>
+<% if current_user == @user %>
+  <h3> Here is a list of all your current projects: </h3>
+<% else %>
+  <h3> Check out <%= @user.username %>'s current projects: </h3>
+<% end %>
+
 <button onclick="window.location.href='/routes/new'">Create a new route!</button><br><br>
 
 <ul>

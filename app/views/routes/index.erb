@@ -3,7 +3,7 @@
 <ul>
   <% @routes.each do |r| %>
   <li>
-    <a href="/user/<%= r.id %>"><h3><%= r.name %></h3></a>
+    <a href="/routes/<%= r.id %>"><h3><%= r.name %></h3></a>
     <h5>Grade: <%= r.grade %></h5>
     <h5>Location: <%= r.location %></h5>
     <% r.users.each do |u| %>

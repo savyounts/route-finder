@@ -13,11 +13,15 @@ class RoutesController < ApplicationController
 
   # POST: /routes
   post "/routes" do
-    redirect "/routes"
+    @rs = RouteStatus.create(params[:route_status])
+    @route = Route.create(name: params[:name], grade: params[:grade], location: params[:location])
+    @route.route_statuses << @rs
+    redirect "/routes/#{@route.id}"
   end
 
   # GET: /routes/5
   get "/routes/:id" do
+    @route = Route.find(params[:id])
     erb :"/routes/show"
   end
 

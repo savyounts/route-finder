@@ -2,13 +2,21 @@ class RoutesController < ApplicationController
 
   # GET: /routes
   get "/routes" do
-    @routes = Route.all
-    erb :"/routes/index"
+    if logged_in?
+      @routes = Route.all
+      erb :"/routes/index"
+    else
+      redirect "/login"
+    end
   end
 
   # GET: /routes/new
   get "/routes/new" do
-    erb :"/routes/new"
+    if logged_in?
+      erb :"/routes/new"
+    else
+      redirect "/login"
+    end
   end
 
   # POST: /routes
@@ -21,13 +29,21 @@ class RoutesController < ApplicationController
 
   # GET: /routes/5
   get "/routes/:id" do
-    @route = Route.find(params[:id])
-    erb :"/routes/show"
+    if logged_in?
+      @route = Route.find(params[:id])
+      erb :"/routes/show"
+    else
+      redirect "/login"
+    end
   end
 
   get '/routes/:id/add' do
-    @route = Route.find(params[:id])
-    erb :"/routes/add"
+    if logged_in?
+      @route = Route.find(params[:id])
+      erb :"/routes/add"
+    else
+      redirect "/login"
+    end
   end
 
   post '/routes/:id' do
@@ -37,7 +53,12 @@ class RoutesController < ApplicationController
 
   # GET: /routes/5/edit
   get "/routes/:id/edit" do
-    erb :"/routes/edit"
+    @route = Route.find(params[:id])
+    if current_user
+      erb :"/routes/edit"
+    else
+      redirect "/routes/#{@route.id}/edit"
+    end
   end
 
   # PATCH: /routes/5
@@ -47,6 +68,12 @@ class RoutesController < ApplicationController
 
   # DELETE: /routes/5/delete
   delete "/routes/:id/delete" do
-    redirect "/routes"
+    @route = Route.find(params[:id])
+    if current_user
+      @route.destroy
+      redirect "/routes"
+    else
+      redirect "/routes/#{@route.id}"
+    end
   end
 end

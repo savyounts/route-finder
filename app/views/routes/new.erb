@@ -1,1 +1,16 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>Create a new Route</h1>
+
+<form action="/routes" method="post">
+  <input type="text" name="route[name]" placeholder="Route Name"><br>
+  <input type="text" name="route[grade]" placeholder="Route Grade"><br>
+  <input type="text" name="route[location]" placeholder="Location"><br><br>
+  <label for="route_staus[climb_style]">Type of Route:</label><br>
+  <input type="text" name="route_status[climb_style]" placeholder="i.e. Bouldering"><br><br>
+  <label for="route_staus[status]">Status:</label><br>
+  <input type="radio" name="route_status[status]" value="Scoping it out"> Scoping it out<br>
+  <input type="radio" name="route_status[status]" value="In Progress"> In progress<br>
+  <input type="radio" name="route_status[status]" value="Sent dat ish"> Sent dat ish<br><br>
+  <label for="route_staus[current_issues]">Current Issues:</label><br>
+  <textarea name="route_staus[current_issues]" placeholder="It's so hard"></textarea><br>
+  <input type="submit" value="Create Route">
+</form>

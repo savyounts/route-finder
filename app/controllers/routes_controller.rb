@@ -55,9 +55,11 @@ class RoutesController < ApplicationController
 
   # GET: /routes/5/edit
   get "/routes/:id/edit" do
+    # binding.pry
     @route = Route.find(params[:id])
     if logged_in?
       if current_user
+        @current_user = current_user
         erb :"/routes/edit"
       else
         redirect "/routes/#{current_user.id}"
@@ -80,6 +82,18 @@ class RoutesController < ApplicationController
       redirect "/routes"
     else
       redirect "/routes/#{@route.id}"
+    end
+  end
+
+
+
+  helpers do
+    def my_routes_status(route, user)
+      route.route_statuses.find {|rs| rs.user_id == user.id}
+    end
+
+    def my_users_status(user, route)
+      user.route_statuses.find {|rs| rs.route_id == route.id}
     end
   end
 

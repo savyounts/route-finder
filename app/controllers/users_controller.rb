@@ -2,7 +2,11 @@ class UsersController < ApplicationController
 
   # GET: /users/new
   get "/login" do
-    erb :"/users/login"
+    if !logged_in?
+      erb :"/users/login"
+    else
+      redirect "/users/#{current_user.id}"
+    end
   end
 
   # POST: /users
@@ -17,7 +21,11 @@ class UsersController < ApplicationController
   end
 
   get "/signup" do
-    erb :"/users/signup"
+    if !logged_in?
+      erb :"/users/signup"
+    else
+      redirect "/users/#{current_user.id}"
+    end
   end
 
   post "/signup" do
@@ -33,7 +41,7 @@ class UsersController < ApplicationController
   # GET: /users/5
   get "/users/:id" do
     @user = User.find(params[:id])
-    erb :"/users/show"
+      erb :"/users/show"
   end
 
   get "/logout" do

@@ -48,9 +48,13 @@ class RoutesController < ApplicationController
     end
   end
 
-  patch '/routes/:id' do
+  post '/routes/:id' do
+    @route = Route.find(params[:id])
+    rs = RouteStatus.create(params[:route_status])
+    @route.route_statuses << rs
+    current_user.route_statuses << rs
 
-    redirect "/routes/:id"
+    redirect "/routes/#{@route.id}"
   end
 
   # GET: /routes/5/edit

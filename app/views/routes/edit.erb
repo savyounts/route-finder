@@ -11,6 +11,6 @@
   <input type="radio" name="route_status[status]" value="In Progress" > In progress<br>
   <input type="radio" name="route_status[status]" value="Sent dat ish" > Sent dat ish<br><br>
   <label for="route_staus[current_issue]">Current Issues:</label><br>
-  <textarea name="route_status[current_issue]" value="y_routes_status(@route, @current_user).current_issue"></textarea><br>
-  <input type="submit" value="Add Route">
+  <textarea name="route_status[current_issue]" ><%= my_routes_status(@route, @current_user).current_issue%></textarea><br>
+  <input type="submit" value="Update Status">
 </form>

@@ -7,5 +7,6 @@
 <% end %>
 
 <br><br>
-
-<button onclick="window.location.href='/routes/add'">Add to your Routes</a></button>
+<button onclick="window.location.href='/routes/<%= @route.id%>/edit'">Edit Your Route Status</a></button><br>
+<button onclick="window.location.href='/routes/<%= @route.id%>/delete'">Delete From Your Routes</a></button><br>
+<button onclick="window.location.href='/routes/<%= @route.id%>/add'">Add to Your Routes</a></button>

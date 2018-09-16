@@ -36,8 +36,14 @@
     bottom: 0;
   }
 
-  #welcome_buttons {
-    margin: 20px, auto;
+  div #welcome_buttons {
+    padding: 20px;
+    margin: auto;
+  }
+
+  div #welcome_buttons a{
+    margin: auto;
+    text-align: center;
   }
   .welcome_text {
     text-align: center;
@@ -58,7 +64,10 @@
     text-decoration: none;
     color: initial;
     padding: 1%;
-}
+    text-align: center;
+    margin-top: 1%;
+  }
+
   .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -117,6 +126,10 @@
     color: white;
     text-decoration: none;
     padding: 20px;
+  }
+
+  nav a:hover {
+    color: #00cc00;
   }
 
   a {

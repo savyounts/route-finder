@@ -20,16 +20,45 @@
     line-height: 18px;
   }
 
-  #welcome_text {
+  #welcome_header {
     font-size: 8em;
     padding: 40px;
-    text-align: center; 
   }
 
   #welcome_subhead {
     font-size: 1.75em;
-    text-align: center;
+    padding-bottom: 20px;
   }
+
+  #welcome_branding {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  #welcome_buttons {
+    margin: 20px, auto;
+  }
+  .welcome_text {
+    text-align: center;
+    color: #fff;
+  }
+
+  .white_bar {
+    background-color: rgba(100, 100, 100, 0.5);
+    padding: 40px;
+    margin-top: 10%;
+  }
+
+  a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    padding: 1%;
+}
   .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -65,7 +94,7 @@
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
+    /* border-bottom: 2px solid #ccc; */
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -121,7 +150,6 @@
   }
 
   footer.branding {
-    border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
   }

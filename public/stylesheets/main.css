@@ -27,24 +27,15 @@
 
   #welcome_subhead {
     font-size: 1.75em;
-    padding-bottom: 20px;
+    
   }
 
   #welcome_branding {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    bottom: 5px;
   }
 
-  div #welcome_buttons {
-    padding: 20px;
-    margin: auto;
-  }
-
-  div #welcome_buttons a{
-    margin: auto;
-    text-align: center;
-  }
   .welcome_text {
     text-align: center;
     color: #fff;
@@ -54,18 +45,6 @@
     background-color: rgba(100, 100, 100, 0.5);
     padding: 40px;
     margin-top: 8%;
-  }
-
-  a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
-    padding: 1%;
-    text-align: center;
-    margin-top: 1%;
   }
 
   .wrapper {
@@ -133,9 +112,10 @@
     color: #00cc00;
   }
 
-  a {
-    color: black;
+  a.button {
+    color: white;
     text-decoration: none;
+    text-align: center;
   }
 
   .main {

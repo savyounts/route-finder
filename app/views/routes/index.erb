@@ -1,0 +1,16 @@
+<h1>All Routes</h1>
+
+<ul class='route_details'>
+  <% @routes.each do |r| %>
+  <li>
+    <a href="/routes/<%= r.id %>"><h2><%= r.name %></h2></a>
+    <h5>Grade: <%= r.grade %></h5>
+    <h5>Location: <%= r.location %></h5>
+    <% r.users.each do |u| %>
+      <a href="/users/<%= u.id %>"><h5 class='route_users'><%= u.username %>, </h5></a>
+    <% end %>
+    <br><br>
+  <% end %>
+
+  </li>
+</ul>

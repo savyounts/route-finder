@@ -1,0 +1,24 @@
+<h1> <%= @route.name %></h1><br>
+
+<h4>Grade: <%= @route.grade %></h4><br>
+<h4>Location: <%= @route.location %></h4><br>
+<h4>Users: <% @route.users.each do |u| %></h4><br>
+  <a href="/users/<%= u.id %>"><h5><%= u.username %>, </h5></a>
+    <%= my_users_status(u, @route).current_issue %>
+  <% end %>
+
+<br><br>
+
+<% if @route.users.include?(current_user) %>
+  <button onclick="window.location.href='/routes/<%= @route.id%>/edit'">Edit Your Route Status</a></button><br>
+<% end %>
+
+<button onclick="window.location.href='/routes/<%= @route.id%>/add'">Add to Your Routes</a></button>
+
+
+<% if @route.users.include?(current_user) %>
+  <form action="/routes/<%= @route.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete From Your Routes">
+  </form>
+<% end %>

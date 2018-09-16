@@ -13,10 +13,52 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
+    background-image: url('/images/fancycrave-264511-unsplash.jpg');
+    background-size: cover;
+    color: #000;
     font-family: Sans-Serif;
     line-height: 18px;
+  }
+
+  #welcome_header {
+    font-size: 8em;
+    padding: 40px;
+  }
+
+  #welcome_subhead {
+    font-size: 1.75em;
+
+  }
+
+  #welcome_branding {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+  }
+
+  #welcome_links {
+    padding-top: 30px;
+    font-size: 1.5em;
+  }
+
+  #welcome_links a {
+    text-decoration: none;
+  }
+
+  #welcome_links a:hover {
+    color: #00cc00;
+  }
+
+  .welcome_text {
+    text-align: center;
+    color: #fff;
+  }
+
+
+  .white_bar {
+    background-color: rgba(100, 100, 100, 0.5);
+    padding: 40px;
+    margin-top: 8%;
   }
 
   .wrapper {
@@ -30,13 +72,31 @@
     width: 85%;
   }
 
+  .route_details {
+    color: #4c4c4c;
+  }
+
+  .route_details a {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    padding-right: 10px;
+
+  }
+
+  .route_users {
+    color: #4c4c4c;
+    font-size: 18px;
+    display: inline;
+  }
+
   h1 {
     font-size: 36px;
     line-height: 54px;
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
+    /* border-bottom: 2px solid #ccc; */
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -49,6 +109,27 @@
 
   p {
     margin-bottom: 18px;
+  }
+
+  nav {
+    padding-top: 2%;
+    text-align: right;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+  }
+
+  nav a:hover {
+    color: #00cc00;
+  }
+
+  a.button {
+    color: white;
+    text-decoration: none;
+    text-align: center;
   }
 
   .main {
@@ -77,7 +158,6 @@
   }
 
   footer.branding {
-    border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
   }

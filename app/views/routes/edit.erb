@@ -1,0 +1,17 @@
+<h1>Edit your route</h1>
+
+<h4>Name: </h4><%= @route.name %><br>
+<h4>Grade: </h4><%= @route.grade %><br>
+<h4>Location: </h4><%= @route.location %><br><br>
+<form action="/routes/<%= @route.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for="route_staus[climb_style]">Type of Route:</label><br>
+  <input type="text" name="route_status[climb_style]" placeholder="i.e. Bouldering" value="<%= @rs.climb_style %>"><br><br>
+  <label for="route_staus[status]">Status:</label><br>
+  <input type="radio" name="route_status[status]" value="Scoping it out" > Scoping it out<br>
+  <input type="radio" name="route_status[status]" value="In Progress" > In progress<br>
+  <input type="radio" name="route_status[status]" value="Sent dat ish" > Sent dat ish<br><br>
+  <label for="route_staus[current_issue]">Current Issues:</label><br>
+  <textarea name="route_status[current_issue]" ><%= @rs.current_issue%></textarea><br>
+  <input type="submit" value="Update Status">
+</form>

@@ -53,7 +53,7 @@
   .white_bar {
     background-color: rgba(100, 100, 100, 0.5);
     padding: 40px;
-    margin-top: 10%;
+    margin-top: 8%;
   }
 
   a.button {
@@ -119,7 +119,8 @@
   }
 
   nav {
-    margin: 0, auto;
+    padding-top: 2%;
+    text-align: right;
   }
 
   nav a {

@@ -27,7 +27,7 @@
 
   #welcome_subhead {
     font-size: 1.75em;
-    
+
   }
 
   #welcome_branding {
@@ -36,10 +36,24 @@
     bottom: 5px;
   }
 
+  #welcome_links {
+    padding-top: 30px;
+    font-size: 1.5em;
+  }
+
+  #welcome_links a {
+    text-decoration: none;
+  }
+
+  #welcome_links a:hover {
+    color: #00cc00;
+  }
+
   .welcome_text {
     text-align: center;
     color: #fff;
   }
+
 
   .white_bar {
     background-color: rgba(100, 100, 100, 0.5);

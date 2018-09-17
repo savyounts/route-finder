@@ -15,11 +15,13 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/routes">Route List</a>
-        <a href="/logout">Log Out</a>
-
-      </nav>
+      <% if logged_in? %>
+        <nav>
+          <a href="/routes">Route List</a>
+          <a href="/users/<%= current_user.id %>">My Projects</a>
+          <a href="/logout">Log Out</a>
+        </nav>
+      <% end %>
     </header>
     <div class="wrapper">
 

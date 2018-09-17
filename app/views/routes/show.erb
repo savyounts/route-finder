@@ -5,7 +5,7 @@
 <p class="route_show_text welcome_text">Location: <%= @route.location %></p>
 <p class="route_show_text welcome_text">Users:
   <% @route.users.each do |u| %></p><br>
-    <a class="route_users_show" href="/users/<%= u.id %>"><p><%= u.name %>, </p></a>
+    <a class="route_users_show" href="/users/<%= u.id %>"><p><%= u.name %> </p></a>
     <p class="user_status"><%= my_users_status(u, @route).current_issue %></p>
   <% end %>
 

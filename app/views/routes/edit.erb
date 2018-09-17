@@ -8,16 +8,16 @@
 
       <input id="hidden" type="hidden" name="_method" value="patch">
       <label for="route_staus[climb_style]">Type of Route:</label><br>
-      <input type="text" name="route_status[climb_style]" placeholder="i.e. Bouldering" value="<%= @rs.climb_style %>"><br><br>
+      <input type="text" name="route_status[climb_style]" placeholder="i.e. Bouldering" value="<%= @rs.climb_style %>" required><br><br>
 
       <label for="route_staus[status]">Status:</label><br>
-      <input type="radio" name="route_status[status]" value="Scoping it out" > Scoping it out<br>
-      <input type="radio" name="route_status[status]" value="In Progress" > In progress<br>
-      <input type="radio" name="route_status[status]" value="Sent dat ish" > Sent dat ish<br><br>
+      <input type="radio" name="route_status[status]" value="Scoping it out" required> Scoping it out<br>
+      <input type="radio" name="route_status[status]" value="In Progress" required> In progress<br>
+      <input type="radio" name="route_status[status]" value="Sent dat ish" required> Sent dat ish<br><br>
 
       <label for="route_staus[current_issue]">Current Issues:</label><br>
-      <textarea name="route_status[current_issue]" ><%= @rs.current_issue%></textarea><br>
-      
+      <textarea name="route_status[current_issue]" required><%= @rs.current_issue%></textarea><br>
+
       <input type="submit" value="Update Status">
     </form>
   <div>

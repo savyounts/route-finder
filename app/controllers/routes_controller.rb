@@ -20,7 +20,7 @@ end
 
   # POST: /routes
   post "/routes" do
-    if !params[:route].empty? && !Route.find_by(name: params[:route][:name])
+    if !Route.find_by(name: params[:route][:name])
       @rs = RouteStatus.create(params[:route_status])
       @route = Route.create(params[:route])
       @route.route_statuses << @rs

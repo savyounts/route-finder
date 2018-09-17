@@ -122,10 +122,11 @@
   input[type=text], textarea {
     width: 250px;
     height: 30px;
+    font-size: .75em;
   }
 
   input::placeholder {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 
   input[type=submit], button {

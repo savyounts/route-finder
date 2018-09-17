@@ -1,4 +1,6 @@
+require 'rack-flash'
 class RoutesController < ApplicationController
+  use Rack::Flash
   # GET: /routes
   get "/routes" do
     if logged_in?
@@ -27,7 +29,7 @@ class RoutesController < ApplicationController
       current_user.route_statuses << @rs
       redirect "/routes/#{@route.id}"
     else
-      flash[:exist_message] = "This route already exists. Find this route on the Routes page and add it to your projects."
+      # flash[:exist_message] = "This route already exists. Find this route on the Routes page and add it to your projects."
       redirect "/routes/new"
     end
   end
@@ -48,7 +50,7 @@ class RoutesController < ApplicationController
       if current_user.routes.include?(@route)
         redirect "/routes/#{@route.id}"
       else
-        erb :"/routes/add"
+        erb :"/routes/add", layout: :header_layout
       end
     else
       redirect "/login"
@@ -72,7 +74,7 @@ class RoutesController < ApplicationController
     if logged_in?
       if @route.users.include?(current_user)
         @rs = my_routes_status(@route, current_user)
-        erb :"/routes/edit"
+        erb :"/routes/edit", layout: :header_layout
       else
         redirect "/routes/#{@route.id}"
       end

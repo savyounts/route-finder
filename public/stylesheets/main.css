@@ -119,6 +119,18 @@
     color: #fff;
   }
 
+  .prefilled_form {
+    text-align: left;
+    color: #fff;
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .prefilled_form h4 {
+    font-size: 1.25em;
+    margin: 8px 0;
+  }
+
   input[type=text], textarea {
     width: 250px;
     height: 30px;

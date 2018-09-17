@@ -12,9 +12,9 @@
 
       <label for="route_staus[status]">Status:</label><br>
 
-      <input type="radio" name="route_status[status]" value="Scoping It Out" <%='checked' if my_routes_status(@route, current_user).status == 'Scoping It Out' %> required> Scoping It Out<br>
-      <input type="radio" name="route_status[status]" value="In Progress" <%='checked' if my_routes_status(@route, current_user).status == 'In Progress' %> required> In Progress<br>
-      <input type="radio" name="route_status[status]" value="Sent Dat Ish" <%='checked' if my_routes_status(@route, current_user).status == 'Sent Dat Ish' %> required> Sent Dat Ish<br><br>
+      <input type="radio" name="route_status[status]" value="Scoping it out" <%='checked' if my_routes_status(@route, current_user).status == "Scoping it out" %> > Scoping it out<br>
+      <input type="radio" name="route_status[status]" value="In Progress" <%='checked' if my_routes_status(@route, current_user).status == "In Progress" %> > In Progress<br>
+      <input type="radio" name="route_status[status]" value="Sent" <%='checked' if my_routes_status(@route, current_user).status == "Sent" %> > Sent<br><br>
 
       <label for="route_staus[current_issue]">Current Issues:</label><br>
       <textarea name="route_status[current_issue]" required><%= @rs.current_issue%></textarea><br>

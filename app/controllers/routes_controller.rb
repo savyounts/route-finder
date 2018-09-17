@@ -83,7 +83,8 @@ end
   delete "/routes/:id/delete" do
     @route = Route.find(params[:id])
     if current_user
-      @route.destroy
+      @rs = my_routes_status(@route, current_user)
+      @rs.destroy
       redirect "/routes"
     else
       redirect "/routes/#{@route.id}"

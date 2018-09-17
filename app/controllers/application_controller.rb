@@ -10,7 +10,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    @current_user = current_user
     erb :welcome, layout: :header_layout
   end
 

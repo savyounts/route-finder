@@ -59,7 +59,6 @@ end
 
   # GET: /routes/5/edit
   get "/routes/:id/edit" do
-    # binding.pry
     @route = Route.find(params[:id])
     if @route.users.include?(current_user)
       @rs = my_routes_status(@route, current_user)

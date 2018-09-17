@@ -7,7 +7,7 @@
     <p>Grade: <%= r.grade %></p>
     <p>Location: <%= r.location %></p>
     <% r.users.each do |u| %>
-      <a href="/users/<%= u.id %>"><p class='route_users'><%= u.username %>, </p></a>
+      <a href="/users/<%= u.id %>"><p class='route_users'><%= u.name %>, </p></a>
     <% end %>
   </div>
   <% end %>

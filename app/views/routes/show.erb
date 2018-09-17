@@ -1,11 +1,15 @@
 
 <h1 class="show_page_headers welcome_text"> <%= @route.name %></h1><br>
 
-<p class="route_show_text welcome_text">Grade: <%= @route.grade %></p><br>
-<p class="route_show_text welcome_text">Location: <%= @route.location %></p><br>
+<p class="route_show_text welcome_text">Grade: <%= @route.grade %></p>
+<p class="route_show_text welcome_text">Location: <%= @route.location %></p>
 <p class="route_show_text welcome_text">Users:
   <% @route.users.each do |u| %></p><br>
+<<<<<<< HEAD
+    <a class="route_users_show" href="/users/<%= u.id %>"><p><%= u.name %> </p></a>
+=======
     <a class="route_users" href="/users/<%= u.id %>"><p><%= u.name %>, </p></a>
+>>>>>>> additional-css
     <p class="user_status"><%= my_users_status(u, @route).current_issue %></p>
   <% end %>
 

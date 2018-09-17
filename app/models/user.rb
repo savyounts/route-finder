@@ -6,10 +6,6 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :username, presence: true
 
-<<<<<<< HEAD
-=======
-
->>>>>>> additional-css
   def name
     self.username.capitalize
   end

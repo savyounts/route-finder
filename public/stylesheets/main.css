@@ -132,7 +132,7 @@
     text-align: left;
   }
 
-  input[type=text], textarea {
+  input[type=text], input[type=password], textarea {
     width: 250px;
     height: 30px;
     font-size: .75em;

@@ -2,8 +2,20 @@
   User.create(username: Faker::Name.name, password: Faker::Beer.name)
 end
 
-20.times do
-  Route.create(name: Faker::Book.title, color: Faker::Beer.style, grade: Faker::Number.digit, location: Faker::Nation.capital_city)
+5.times do
+  Route.create(name: Faker::Book.title, color: Faker::Beer.style, grade: '5.10c', location: Faker::Nation.capital_city)
+end
+
+5.times do
+  Route.create(name: Faker::Book.title, color: Faker::Beer.style, grade: 'V6', location: Faker::Nation.capital_city)
+end
+
+5.times do
+  Route.create(name: Faker::Book.title, color: Faker::Beer.style, grade: '5.14a', location: Faker::Nation.capital_city)
+end
+
+5.times do
+  Route.create(name: Faker::Book.title, color: Faker::Beer.style, grade: '5.intro', location: Faker::Nation.capital_city)
 end
 
 15.times do

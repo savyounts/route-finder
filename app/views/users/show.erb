@@ -11,13 +11,13 @@
 <% end %>
 <br><br>
 
-<ul class="route_details">
+<div class="route_details">
   <% @user.routes.each do |r| %>
-    <li><a href="/routes/<%= r.id %>"> <%= r.name %></a>
+    <div class="user_route_card"><a href="/routes/<%= r.id %>"> <%= r.name %></a>
       <%= r.grade %><br>
-      Status: <%= my_routes_status(r, @user).status %></li><br>
+      Status: <%= my_routes_status(r, @user).status %></div>
   <% end %>
-</ul>
+</div>
 
 <% if current_user == @user %>
 <button onclick="window.location.href='/routes/new'">Create a new route!</button><br><br>

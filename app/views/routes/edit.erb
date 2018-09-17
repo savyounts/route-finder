@@ -1,9 +1,9 @@
 <div class="form_bar white_bar">
   <h1 class="welcome_text">Edit your route</h1>
   <div class="prefilled_form">
-    <h4 class="prefilled_form welcome_text ">Name: <%= @route.name %></h4>
-    <h4 class="prefilled_form welcome_text">Grade: <%= @route.grade %></h4>
-    <h4 class="prefilled_form welcome_text">Location: <%= @route.location %></h4><br>
+    <h4 class="prefilled_form_text welcome_text ">Name: <%= @route.name %></h4>
+    <h4 class="prefilled_form_text welcome_text">Grade: <%= @route.grade %></h4>
+    <h4 class="prefilled_form_text welcome_text">Location: <%= @route.location %></h4><br>
     <form action="/routes/<%= @route.id %>" method="post">
       <input id="hidden" type="hidden" name="_method" value="patch">
       <label for="route_staus[climb_style]">Type of Route:</label><br>

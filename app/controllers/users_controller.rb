@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   # GET: /users/new
   get "/login" do
     if !logged_in?
-      erb :"/users/login"
+      erb :"/users/login", layout: :header_layout
     else
       redirect "/users/#{current_user.id}"
     end

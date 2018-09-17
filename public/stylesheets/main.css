@@ -30,16 +30,16 @@
 
   }
 
-  #welcome_links {
+  .welcome_links {
     padding-top: 30px;
     font-size: 1.5em;
   }
 
-  #welcome_links a {
+  .welcome_links a {
     text-decoration: none;
   }
 
-  #welcome_links a:hover {
+  .welcome_links a:hover {
     color: #4CAF50;
   }
 
@@ -54,6 +54,16 @@
     background-color: rgba(100, 100, 100, 0.5);
     padding: 40px;
     margin-top: 8%;
+  }
+
+
+  .dark_bg_link {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .dark_bg_link:hover{
+    color: #4CAF50;
   }
 
   .wrapper {

@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   get "/signup" do
     if !logged_in?
-      erb :"/users/signup"
+      erb :"/users/signup", layout: :header_layout
     else
       redirect "/users/#{current_user.id}"
     end

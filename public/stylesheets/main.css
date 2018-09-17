@@ -30,12 +30,6 @@
 
   }
 
-  #welcome_branding {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-  }
-
   #welcome_links {
     padding-top: 30px;
     font-size: 1.5em;
@@ -46,7 +40,7 @@
   }
 
   #welcome_links a:hover {
-    color: #00cc00;
+    color: #4CAF50;
   }
 
   .welcome_text {
@@ -54,6 +48,7 @@
     color: #fff;
   }
 
+/* --- Header Layout Styles --- */
 
   .white_bar {
     background-color: rgba(100, 100, 100, 0.5);
@@ -123,8 +118,32 @@
   }
 
   nav a:hover {
-    color: #00cc00;
+    color: #4CAF50;
   }
+
+  form {
+    margin: 0 auto;
+    width:250px;
+  }
+
+  input {
+    padding: 10px 60px;
+  }
+
+  input::placeholder {
+    font-size: 1.5em;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 1em;
+}
 
   a.button {
     color: white;
@@ -158,8 +177,10 @@
   }
 
   footer.branding {
-    margin-top: 20px;
-    padding-top: 20px;
+    color: #fff;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
   }
 }
 

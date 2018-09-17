@@ -173,6 +173,10 @@
    font-weight: bold;
  }
 
+ .route_details .user_route_card a:hover, .route_users:hover{
+   color: #62A1A4;
+ }
+
  .route_details {
    color: #696969;
    margin: 0 auto 10px;

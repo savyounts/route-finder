@@ -67,7 +67,7 @@
   }
 
   .wrapper {
-    background: #fff;
+    background: #1a1a1a;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -127,7 +127,7 @@
     font-size: 1.5em;
   }
 
-  input[type=submit] {
+  input[type=submit], button {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -136,6 +136,7 @@
     margin: 4px 2px;
     cursor: pointer;
     font-size: 1em;
+    border-radius: 5px;
 }
 
 /* User Show Page */

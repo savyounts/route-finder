@@ -1,5 +1,5 @@
 10.times do
-  User.create(username: Faker::Name.name, password: Faker::Beer.name)
+  User.create(username: Faker::Name.first_name, password: Faker::Beer.name)
 end
 
 5.times do
@@ -21,19 +21,19 @@ end
 15.times do
   rando_user_id = rand(1..12)
   rando_route_id = rand(1..20)
-  RouteStatus.create(user_id: rando_user_id, route_id: rando_route_id, status: "Scoping It Out" , current_issue: Faker::StrangerThings.quote, climb_style: "Top Rope")
+  RouteStatus.create(user_id: rando_user_id, route_id: rando_route_id, status: "Scoping It Out" , current_issue: "Can't get over the crazy overhang 3/4 the way up", climb_style: "Top Rope")
 end
 
 15.times do
   rando_user_id = rand(1..12)
   rando_route_id = rand(1..20)
-  RouteStatus.create(user_id: rando_user_id, route_id: rando_route_id, status: "In Progress" , current_issue: Faker::StrangerThings.quote, climb_style: "Bouldering")
+  RouteStatus.create(user_id: rando_user_id, route_id: rando_route_id, status: "In Progress" , current_issue: "Sloper on the 3rd move is killer", climb_style: "Bouldering")
 end
 
 15.times do
   rando_user_id = rand(1..12)
   rando_route_id = rand(1..20)
-  RouteStatus.create(user_id: rando_user_id, route_id: rando_route_id, status: "Sent dat ish" , current_issue: Faker::StrangerThings.quote, climb_style: "Lead")
+  RouteStatus.create(user_id: rando_user_id, route_id: rando_route_id, status: "Sent dat ish" , current_issue: "Pocket holds kill my fingers by the time I get close to the top", climb_style: "Lead")
 end
 
 sav =   User.create(username: "sav", password: "pass")

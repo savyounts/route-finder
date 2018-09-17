@@ -142,7 +142,7 @@
     font-size: 1.25em;
   }
 
-  input[type=submit], button, input#delete {
+  input[type=submit], button {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -152,7 +152,23 @@
     cursor: pointer;
     font-size: 1em;
     border-radius: 5px;
-    left: 20px;
+
+}
+
+div form#delete_button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+  margin: 4px 2px;
+  width: 200px;
+}
+
+div form#delete_button input[type=submit]{
+  padding: 5px;
 }
 
 /* User Show Page */

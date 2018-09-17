@@ -10,15 +10,16 @@
   <% end %>
 
 <br><br>
-
+<div>
 <% if @route.users.include?(current_user) %>
   <button onclick="window.location.href='/routes/<%= @route.id%>/edit'">Edit Your Route Status</a></button><br>
-  <form action="/routes/<%= @route.id %>/delete" method="post">
+  <form id="delete_button" action="/routes/<%= @route.id %>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input id="delete" type="submit" value="Delete From Your Routes">
+    <input type="submit" value="Delete From Your Routes">
   </form>
 <% end %>
 
 <% if !@route.users.include?(current_user) %>
 <button onclick="window.location.href='/routes/<%= @route.id%>/add'">Add to Your Routes</a></button>
 <% end %>
+</div>

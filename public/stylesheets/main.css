@@ -116,12 +116,12 @@
   form {
     margin: 0 auto;
     width:250px;
-    font-size: 100%;
     color: #fff;
   }
 
-  input {
-    padding: 10px 60px;
+  input[type=text], textarea {
+    width: 250px;
+    height: 30px;
   }
 
   input::placeholder {
@@ -182,6 +182,11 @@
    text-align: left;
  }
 
+ /* Route Forms */
+
+ div.form_bar{
+   margin-top: 3%;
+ }
 
   .main {
     overflow: hidden;

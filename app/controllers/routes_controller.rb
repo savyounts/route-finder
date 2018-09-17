@@ -12,7 +12,7 @@ class RoutesController < ApplicationController
   # GET: /routes/new
   get "/routes/new" do
     if logged_in?
-      erb :"/routes/new"
+      erb :"/routes/new", layout: :header_layout
     else
       redirect "/login"
     end

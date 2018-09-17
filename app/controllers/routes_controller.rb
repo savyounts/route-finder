@@ -1,23 +1,21 @@
 require 'rack-flash'
 class RoutesController < ApplicationController
   use Rack::Flash
+
+  before do
+    if !logged_in?
+      redirect "/login"
+  end
+end
   # GET: /routes
   get "/routes" do
-    if logged_in?
-      @routes = Route.all
-      erb :"/routes/index"
-    else
-      redirect "/login"
-    end
+    @routes = Route.all
+    erb :"/routes/index"
   end
 
   # GET: /routes/new
   get "/routes/new" do
-    if logged_in?
-      erb :"/routes/new", layout: :header_layout
-    else
-      redirect "/login"
-    end
+    erb :"/routes/new", layout: :header_layout
   end
 
   # POST: /routes
@@ -36,24 +34,16 @@ class RoutesController < ApplicationController
 
   # GET: /routes/5
   get "/routes/:id" do
-    if logged_in?
-      @route = Route.find(params[:id])
-      erb :"/routes/show"
-    else
-      redirect "/login"
-    end
+    @route = Route.find(params[:id])
+    erb :"/routes/show"
   end
 
   get '/routes/:id/add' do
-    if logged_in?
-      @route = Route.find(params[:id])
-      if current_user.routes.include?(@route)
-        redirect "/routes/#{@route.id}"
-      else
-        erb :"/routes/add", layout: :header_layout
-      end
+    @route = Route.find(params[:id])
+    if current_user.routes.include?(@route)
+      redirect "/routes/#{@route.id}"
     else
-      redirect "/login"
+      erb :"/routes/add", layout: :header_layout
     end
   end
 
@@ -71,15 +61,11 @@ class RoutesController < ApplicationController
   get "/routes/:id/edit" do
     # binding.pry
     @route = Route.find(params[:id])
-    if logged_in?
-      if @route.users.include?(current_user)
-        @rs = my_routes_status(@route, current_user)
-        erb :"/routes/edit", layout: :header_layout
-      else
-        redirect "/routes/#{@route.id}"
-      end
+    if @route.users.include?(current_user)
+      @rs = my_routes_status(@route, current_user)
+      erb :"/routes/edit", layout: :header_layout
     else
-      redirect "/routes/login"
+      redirect "/routes/#{@route.id}"
     end
   end
 

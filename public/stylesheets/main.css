@@ -199,6 +199,16 @@
    display: inline;
  }
 
+ .route_users_show {
+   color: #62A1A4;
+   font-size: 18px;
+   display: inline;
+ }
+
+ .route_users_show:hover {
+   color: #4c4c4c;
+ }
+
  h1.show_page_headers, h3.show_page_headers {
    text-align: left;
  }

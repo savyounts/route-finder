@@ -67,7 +67,7 @@
   }
 
   .wrapper {
-    background: #1a1a1a;
+    background: rgba(26, 26, 26, 0.75);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -117,6 +117,7 @@
     margin: 0 auto;
     width:250px;
     font-size: 100%;
+    color: #fff;
   }
 
   input {
@@ -145,23 +146,31 @@
    display: inline-block;
    padding: 15px;
    margin: 5px;
-   border: 1px solid black;
+   border: 3px solid #272626;
    vertical-align: top;
+   background: #3a3a3a;
+   border-radius: 5px;
+ }
+
+ .route_details .user_route_card a{
+   color: #237572;
+   font-size: 1.5em;
+   text-decoration: none;
+   font-weight: bold;
  }
 
  .route_details {
-   color: #4c4c4c;
-   margin: 0 auto;
-
+   color: #696969;
+   margin: 0 auto 10px;
  }
-
+/*
  .route_details a {
    font-style: italic;
    font-weight: bold;
    font-size: 28px;
    padding-right: 10px;
 
- }
+ } */
 
  .route_users {
    color: #4c4c4c;
@@ -169,11 +178,10 @@
    display: inline;
  }
 
-  a.button {
-    color: white;
-    text-decoration: none;
-    text-align: center;
-  }
+ h1.show_page_headers, h3.show_page_headers {
+   text-align: left;
+ }
+
 
   .main {
     overflow: hidden;

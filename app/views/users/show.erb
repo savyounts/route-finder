@@ -13,9 +13,11 @@
 
 <div class="route_details">
   <% @user.routes.each do |r| %>
-    <div class="user_route_card"><a href="/routes/<%= r.id %>"> <%= r.name %></a>
-      <%= r.grade %><br><br>
-      Status: <%= my_routes_status(r, @user).status %></div>
+    <div class="user_route_card">
+      <a href="/routes/<%= r.id %>"><h2> <%= r.name %></h2></a>
+      <p><%= r.grade %><p>
+      <p>Status: <%= my_routes_status(r, @user).status %></p>
+    </div>
   <% end %>
 </div>
 

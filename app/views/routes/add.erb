@@ -5,14 +5,18 @@
       <h4 class="prefilled_form_text welcome_text ">Name: <%= @route.name %></h4>
       <h4 class="prefilled_form_text welcome_text">Grade: <%= @route.grade %></h4>
       <h4 class="prefilled_form_text welcome_text">Location: <%= @route.location %></h4><br>
+
       <label for="route_staus[climb_style]">Type of Route:</label><br>
       <input type="text" name="route_status[climb_style]" placeholder="i.e. Bouldering"><br><br>
+
       <label for="route_staus[status]">Status:</label><br>
       <input type="radio" name="route_status[status]" value="Scoping it out"> Scoping it out<br>
       <input type="radio" name="route_status[status]" value="In Progress"> In progress<br>
       <input type="radio" name="route_status[status]" value="Sent dat ish"> Sent dat ish<br><br>
+
       <label for="route_staus[current_issue]">Current Issues:</label><br>
-      <textarea name="route_status[current_issue]" placeholder="It's so hard"></textarea><br>
+      <textarea name="route_status[current_issue]" placeholder="i.e. It's so hard"></textarea><br>
+
       <input type="submit" value="Add Route">
     </form>
   </div>

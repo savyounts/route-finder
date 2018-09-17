@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :username, presence: true
 
+
+  def name
+    self.username.capitalize
+  end
 end

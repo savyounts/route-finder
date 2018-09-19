@@ -30,6 +30,20 @@ class ApplicationController < Sinatra::Base
       user.route_statuses.find {|rs| rs.route_id == route.id}
     end
 
+    def redirect_if_not_logged_in(path)
+      if !logged_in?
+        redirect path
+      end
+    end
+
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    def set_route
+      @route = Route.find(params[:id])
+    end
+
   end
 
 end

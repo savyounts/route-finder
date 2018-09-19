@@ -2,10 +2,10 @@ class UsersController < ApplicationController
 
   # GET: /users/new
   get "/login" do
-    if !logged_in?
-      erb :"/users/login", layout: :header_layout
-    else
+    if logged_in?
       redirect "/users/#{current_user.id}"
+    else
+      erb :"/users/login", layout: :header_layout
     end
   end
 
@@ -21,10 +21,10 @@ class UsersController < ApplicationController
   end
 
   get "/signup" do
-    if !logged_in?
-      erb :"/users/signup", layout: :header_layout
-    else
+    if logged_in?
       redirect "/users/#{current_user.id}"
+    else
+      erb :"/users/signup", layout: :header_layout
     end
   end
 
@@ -40,16 +40,14 @@ class UsersController < ApplicationController
 
   # GET: /users/5
   get "/users/:id" do
-    if logged_in?
-      @user = User.find(params[:id])
-      erb :"/users/show"
-    else
-      redirect "/login"
-    end
+    redirect_if_not_logged_in('/login')
+    set_user
+    erb :"/users/show"
   end
 
   get "/logout" do
     session.clear
     redirect "/"
   end
+
 end
